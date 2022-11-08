@@ -53,7 +53,7 @@ public class EmployeeBook {
     public void editEmployerSallary(String name, String surname, String fname, Integer newSallary) {
         for (int i = 0; i < employers.length; i++) {
             var emp = employers[i];
-            if (emp.isEqualsByFIO(name, surname, fname)) {
+            if (emp.isEqualsByFIO(name, surname, fname)&& employers[i]!=null) {
                 emp.setSallary(newSallary);
             }
 
@@ -63,7 +63,7 @@ public class EmployeeBook {
     public void editEmployerStructure(String name, String surname, String fname, String newStrucrure) {
         for (int i = 0; i < employers.length; i++) {
             var emp = employers[i];
-            if (emp.isEqualsByFIO(name, surname, fname)) {
+            if (emp.isEqualsByFIO(name, surname, fname)&&employers[i]!=null) {
                 emp.setStructure(newStrucrure);
             }
         }
@@ -75,6 +75,9 @@ public class EmployeeBook {
         var structureGroups = new HashMap<String, ArrayList<Employer>>();
 
         for (var employer: employers) {
+            if (employer==null){
+                continue;
+            }
             var struct = employer.getStructure();
             var isContain = structureGroups.containsKey(struct);
 
@@ -90,6 +93,7 @@ public class EmployeeBook {
             System.out.println(struct.getKey());
             System.out.println("\t " + struct.getValue());
         }
+        System.out.println("_________________________________________");
 
     }
 }

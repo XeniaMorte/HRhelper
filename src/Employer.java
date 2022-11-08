@@ -55,8 +55,8 @@ public class Employer {
 
     @Override
     public String toString() {
-        return "Employer { " +
-                "name:'" + name + " " + surname + " " + fname + "', structure: " + structure + ", salary:" + sallary + " }";
+        return "Employer{ " +
+                "name:'" + name + " " + surname + " " + fname + "', structure: " + structure + ", sallary:" + sallary + '}';
 
     }
 
